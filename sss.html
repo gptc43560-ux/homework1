@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sık Sorulan Sorular - TB Hırdavat</title>
+    <meta name="description" content="TB Hırdavat hakkında sık sorulan sorular ve cevapları. Ürünler, teslimat, ödeme ve diğer konularda detaylı bilgiler.">
+    <meta property="og:title" content="Sık Sorulan Sorular - TB Hırdavat">
+    <meta property="og:description" content="TB Hırdavat hakkında sık sorulan sorular ve cevapları. Ürünler, teslimat, ödeme ve diğer konularda detaylı bilgiler.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tbhirdavat.com/sss.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sık Sorulan Sorular - TB Hırdavat">
+    <meta name="twitter:description" content="TB Hırdavat hakkında sık sorulan sorular ve cevapları.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style> 
+        body{font-family:'Inter',sans-serif;} 
+        .text-brand-yellow{color:#F59E0B} 
+        .bg-brand-yellow{background:#F59E0B}
+        .hover\:bg-brand-yellow-dark:hover {
+            background-color: #D97706; /* Amber 700 */
+        }
+        
+        /* --- GÜNCELLENMİŞ SSS Animasyonları --- */
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            /* Sorunun üzerine gelince hafif bir arka plan rengi */
+            background-color: rgba(245, 158, 11, 0.05);
+        }
+        
+        .faq-answer {
+            /* Başlangıçta kapalı (yüksekliği 0) */
+            max-height: 0;
+            overflow: hidden;
+            /* Animasyon için geçiş efekti */
+            transition: max-height 0.3s ease-out;
+        }
+        
+        /* .open class'ı eklendiğinde (JS ile) max-height'i ayarlayacağız. */
+        /* Sabit bir 'max-height: 200px' yerine JS ile dinamik yükseklik vereceğiz. */
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.rotated {
+            /* Simgenin dönmesi için */
+            transform: rotate(180deg);
+        }
+        
+        /* Scroll animations (Bu kısım aynı kaldı) */
+        .scroll-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .scroll-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== YENİ: Nav Bar Hover Animasyonu (Kutucuk Efekti) ===== */
+        .nav-link {
+            position: relative; /* Pozisyonlama için gerekli */
+            z-index: 1; /* Metnin önde kalmasını sağlar */
+            /* Tailwind'in 'transition-colors' sınıfı zaten bu işi yapıyor, ancak emin olmak için: */
+            transition: color 0.3s ease-in-out !important; 
+            padding: 6px 10px; /* Kutucuk hissi için iç boşluk */
+            border-radius: 6px; /* Kutucuğun köşelerini yuvarlat */
+            overflow: hidden; /* Kenar yuvarlatmanın düzgün çalışması için */
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F59E0B; /* Sayfadaki ana sarı renk */
+            transform: scaleX(0); /* Başlangıçta gizli (genişlik 0) */
+            transform-origin: center left; /* Soldan sağa büyüyecek */
+            transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1); /* Yumuşak animasyon */
+            z-index: -1; /* Metnin arkasına gönderir */
+            border-radius: 6px; /* Arka planla eşleşen köşeler */
+        }
+
+        .nav-link:hover {
+            /* Tailwind'in 'hover:text-brand-yellow' sınıfını geçersiz kılar */
+            color: #000000 !important; /* Üzerine gelince metin rengi siyah */
+        }
+
+        .nav-link:hover::before {
+            transform: scaleX(1); /* Üzerine gelince %100 genişliğe çıkar */
+            transform-origin: center left;
+        }
+        /* ===== Nav Bar Animasyon Sonu ===== */
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <header id="site-header" class="bg-black shadow-lg sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <a href="index.html" class="flex items-center">
+                    <img src="output-onlinepngtools.png" alt="TB Hırdavat Logo" class="h-12 w-auto" />
+                    
+                    </a>
+                
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Ana Sayfa</a>
+                    <a href="hakkimizda.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Hakkımızda</a>
+                    <a href="neden-biz.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Neden Biz</a>
+                    <a href="urunler.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Ürünler</a>
+                    <a href="katalog.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Katalog</a>
+                    <a href="markalar.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Markalar</a>
+                    <a href="blog.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Blog</a>
+                    <a href="yorumlar.html" class="nav-link text-gray-200 hover:text-brand-yellow transition-colors duration-200">Yorumlar</a>
+                    <a href="sss.html" class="nav-link text-brand-yellow font-semibold transition-colors duration-200">SSS</a>
+                    
+                    
+                    <a href="iletisim.html" class="cta-link bg-brand-yellow text-black font-bold py-2 px-5 rounded-lg hover:bg-brand-yellow-dark transition-colors duration-200">
+                        Bize Ulaşın
+                    </a>
+                </nav>
+                
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-black shadow-xl absolute top-20 left-0 right-0 z-40">
+            <a href="index.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Hakkımızda</a>
+            <a href="neden-biz.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Neden Biz</a>
+            <a href="urunler.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Ürünler</a>
+            <a href="katalog.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Katalog</a>
+            <a href="markalar.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Markalar</a>
+            <a href="blog.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Blog</a>
+            <a href="yorumlar.html" class="block text-center text-gray-200 hover:bg-gray-800 py-3 px-4">Yorumlar</a>
+            <a href="sss.html" class="block text-center text-brand-yellow font-semibold bg-gray-700 py-3 px-4">SSS</a>
+            <a href="iletisim.html" class="block text-center bg-brand-yellow text-black font-bold py-4 px-4 hover:bg-brand-yellow-dark transition-colors duration-200">Bize Ulaşın</a>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <nav class="bg-gray-800 py-4">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center text-sm">
+                    <a href="index.html" class="hover:text-white">Ana Sayfa</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white">Sık Sorulan Sorular</span>
+                </div>
+            </div>
+        </nav>
+
+        <section class="py-16 bg-gray-900 scroll-fade-in">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">Sık Sorulan Sorular</h1>
+                    <p class="text-gray-400 text-center mb-12">Merak ettiğiniz soruların cevaplarını burada bulabilirsiniz</p>
+                    
+                    <div class="space-y-4">
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Hangi ürün kategorilerinde hizmet veriyorsunuz?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Elektrik malzemeleri, boru ve bağlantı elemanları, el aletleri, güvenlik malzemeleri, yapı malzemeleri ve daha birçok kategoride geniş ürün yelpazesi sunuyoruz. Detaylı ürün listesi için ürünler sayfamızı ziyaret edebilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Minimum sipariş miktarı var mı?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Minimum sipariş miktarımız bulunmamaktadır. Küçük siparişlerden büyük projelere kadar her türlü ihtiyacınızı karşılayabiliriz. Tek ürün siparişi de verebilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Teslimat süresi ne kadar?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Stokta bulunan ürünler için teslimat süresi 1-3 iş günüdür. Özel ürünler için bu süre 5-10 iş gününe çıkabilir. Acil siparişleriniz için WhatsApp hattımızdan bize ulaşabilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Hangi ödeme yöntemlerini kabul ediyorsunuz?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Nakit, kredi kartı, banka havalesi ve çek ile ödeme kabul ediyoruz. Kurumsal müşterilerimiz için vadeli ödeme seçenekleri de mevcuttur. Detaylı bilgi için iletişime geçebilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Ürün garantisi nasıl çalışır?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Tüm ürünlerimiz üretici garantisi ile gelir. Garanti süreleri ürün kategorisine göre değişiklik gösterir. Garanti kapsamındaki arızalı ürünlerin değişimi veya tamiri için müşteri hizmetlerimizden destek alabilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Fiyat teklifi nasıl alabilirim?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">İletişim formumuzu doldurarak veya WhatsApp hattımızdan bize ulaşarak fiyat teklifi alabilirsiniz. Ürün kodu, miktar ve teslimat adresinizi belirtmeniz yeterlidir. 24 saat içinde size dönüş yapacağız.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Toplu siparişlerde indirim var mı?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Evet, büyük miktarlı siparişlerde özel indirimler sunuyoruz. Miktar ve ürün kategorisine göre değişen indirim oranları için satış temsilcimizle görüşebilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item bg-gray-800 rounded-lg overflow-hidden">
+                            <div class="faq-question p-6 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Teknik destek alabilir miyim?</h3>
+                                <svg class="faq-icon w-6 h-6 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="px-6 pb-6">
+                                    <p class="text-gray-300">Elbette! Uzman teknik ekibimiz ürün seçimi, kurulum ve kullanım konularında size yardımcı olmaktadır. Teknik destek için iletişim formumuzu kullanabilir veya telefon ile bize ulaşabilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 text-center">
+                        <h2 class="text-2xl font-bold mb-4">Sorunuzun cevabını bulamadınız mı?</h2>
+                        <p class="text-gray-400 mb-8">Uzman ekibimiz size yardımcı olmaktan mutluluk duyar</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="iletisim.html" class="bg-brand-yellow text-black font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg transform hover:scale-105">
+                                İletişime Geç
+                            </a>
+                            <a href="https://wa.me/905307901052" target="_blank" rel="noopener" class="border border-gray-600 text-gray-200 font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition-all duration-300">
+                                WhatsApp'tan Yaz
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-gray-400 py-10 text-center mt-auto">
+        <div class="container mx-auto px-4">&copy; 2025 TB Hırdavat</div>
+    </footer>
+
+    <script>
+        // --- GÜNCELLENMİŞ SSS Toggle Fonksiyonu ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling; // .faq-answer
+                    const icon = this.querySelector('.faq-icon');
+                    const item = this.parentElement; // .faq-item
+                    
+                    const isOpen = answer.classList.contains('open');
+
+                    // Önce tüm açık olanları kapat
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question) {
+                            const otherAnswer = otherQuestion.nextElementSibling;
+                            const otherIcon = otherQuestion.querySelector('.faq-icon');
+                            const otherItem = otherQuestion.parentElement;
+                            
+                            if (otherAnswer.classList.contains('open')) {
+                                otherAnswer.classList.remove('open');
+                                otherAnswer.style.maxHeight = null; // CSS'teki 'max-height: 0'a döner
+                                otherIcon.classList.remove('rotated');
+                                otherItem.classList.remove('bg-gray-700'); // Vurgu rengini kaldır
+                            }
+                        }
+                    });
+                    
+                    // Tıklanan öğeyi aç/kapat
+                    if (isOpen) {
+                        // Zaten açıksa, kapat
+                        answer.classList.remove('open');
+                        answer.style.maxHeight = null; // CSS'teki 'max-height: 0'a döner
+                        icon.classList.remove('rotated');
+                        item.classList.remove('bg-gray-700');
+                    } else {
+                        // Kapalıysa, aç
+                        answer.classList.add('open');
+                        // Cevabın gerçek yüksekliğini alıp max-height olarak ayarla
+                        // Bu sayede animasyon pürüzsüz olur ve her uzunluğa uyar
+                        answer.style.maxHeight = answer.scrollHeight + 'px'; 
+                        icon.classList.add('rotated');
+                        item.classList.add('bg-gray-700'); // Aktif soruya vurgu rengi
+                    }
+                });
+            });
+            
+            // Mobile menu toggle (Yeni header ile uyumlu)
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Mobil menü linklerine tıklandığında menüyü kapat
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Scroll animations (Bu kısım aynı kaldı)
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all scroll animation elements
+            const animatedElements = document.querySelectorAll('.scroll-fade-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
